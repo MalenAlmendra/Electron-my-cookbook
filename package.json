@@ -1,0 +1,20 @@
+
+{
+  "name": "my-cookbook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron . ",
+    "sass": "node-sass -w ./css/sass/style.scss ./css/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^9.2.0"
+  },
+  "dependencies": {
+    "node-sass": "^4.14.1"
+  }
+}
