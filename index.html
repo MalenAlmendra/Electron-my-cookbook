@@ -11,9 +11,24 @@
 </head>
 <body>
     <div class="container">
-        <section class="exitBar"><a href="#" id="minimizeAPP"><i class="fas fa-minus fa-lg"></i></a><a href="#" id="closeApp"><i class="fas fa-times fa-lg"></i></a></section>        
-        <section class="bigLogo">Logo - searchbar - button</section>        
-        <section class="moreRecipetn"><button class="bigBtn">Ver Recetas</button></section>        
+        <section class="exitBar">
+            <a href="#" class="minimizeBtn" id="minimizeBtn"><i class="fas fa-minus fa-lg"></i></a>
+            <a href="#"class="closeBtn" id="closeBtn"><i class="fas fa-times fa-lg"></i></a>
+        </section>        
+        <section class="bigLogo">
+            <img src="./assets/Logo big.svg" />
+            <form class="mainForm" action="#">
+                <input class="searchInput" id="searchInput" type="search" name="search"  placeholder="Buscar receta..."/>
+                <input class="searchBtn" id="searchBtn" type="button" value="Buscar" />
+            </form>
+        </section>        
+        <section class="moreRecipeBtn">
+            <button id="lookRecipes" class="bigBtn">Ver Recetas</button>
+        </section>        
     </div>
+
+
+
+    <!-- <script src="./js/app.js"></script> -->
 </body>
 </html>

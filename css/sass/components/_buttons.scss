@@ -1,5 +1,36 @@
-@import '../base/colors.scss';
+
+//Botones de cierre y minimizar
+.minimizeBtn{
+    text-decoration: none;
+    color: var(--colorBg);
+}
+
+.closeBtn{
+    text-decoration: none;
+    color: var(--colorBg);
+}
+//Botón de la barra de búsqueda
+.searchBtn{
+    position: relative;
+    width: 97px;
+    height: 54px;
+    border-radius: 0 10px 10px 0;
+    border: 1px solid var(--colorPink2);
+    background-color: var(--colorBg);
+    font-family: "Quicksand",sans-serif;
+    font-weight: 500;
+    border-left: 1px solid var(--colorPink2);
+}
+//Botón principal de "Ver Recetas"
 .bigBtn{
+    font-family: "Quicksand",sans-serif;
+    font-weight: 500;
+    font-size:1em;
     background-color: var(--colorPink3);
-    
+    border: 1px solid var(--colorBg);
+    color: var(--colorBg);
+    width: 11.5em;
+    height: 4em;
+    border-radius: 5px;
+    box-shadow: 4px 4px 4px rgba(33,8,21,.30);
 }

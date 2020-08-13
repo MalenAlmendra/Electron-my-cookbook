@@ -25,8 +25,11 @@ h1, h2, h3 {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
-  justify-content: center; }
+  justify-content: center;
+  background-image: url("../assets/bg.png");
+  background-size: cover; }
   .container .exitBar {
+    z-index: 10;
     width: 100%;
     max-height: 80px;
     grid-row: 1/2;
@@ -34,17 +37,65 @@ h1, h2, h3 {
     justify-content: flex-end;
     align-items: flex-start; }
     .container .exitBar a {
-      margin: .8em .8em 0 0; }
-  .container .bigLog {
-    background-color: cyan; }
+      margin: .8em 1.3em 0 0; }
+  .container .bigLogo {
+    z-index: 10;
+    margin: 0 auto; }
+    .container .bigLogo img {
+      margin-bottom: 4.5em; }
+  .container .moreRecipeBtn {
+    margin: 0 auto;
+    z-index: 10; }
 
-:root {
-  --colorBg:#FEFBFC;
-  --colorPink1:#DB71A9;
-  --colorPink2:#E495BF;
-  --colorPink3:#631940;
-  --colorPrincipal:#DB71A9;
-  --colorText:#210815; }
+.container::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--colorPrincipal);
+  opacity: 0.8; }
+
+.mainForm {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.minimizeBtn {
+  text-decoration: none;
+  color: var(--colorBg); }
+
+.closeBtn {
+  text-decoration: none;
+  color: var(--colorBg); }
+
+.searchBtn {
+  position: relative;
+  width: 97px;
+  height: 54px;
+  border-radius: 0 10px 10px 0;
+  border: 1px solid var(--colorPink2);
+  background-color: var(--colorBg);
+  font-family: "Quicksand",sans-serif;
+  font-weight: 500;
+  border-left: 1px solid var(--colorPink2); }
 
 .bigBtn {
-  background-color: var(--colorPink3); }
+  font-family: "Quicksand",sans-serif;
+  font-weight: 500;
+  font-size: 1em;
+  background-color: var(--colorPink3);
+  border: 1px solid var(--colorBg);
+  color: var(--colorBg);
+  width: 11.5em;
+  height: 4em;
+  border-radius: 5px;
+  box-shadow: 4px 4px 4px rgba(33, 8, 21, 0.3); }
+
+.searchInput {
+  width: 515px;
+  height: 54px;
+  border-radius: 10px 0 0 10px;
+  border: 1px solid var(--colorPink2);
+  font-size: 1.2em;
+  background-color: var(--colorBg);
+  padding-left: 2em; }

@@ -1,6 +1,11 @@
 const {app, BrowserWindow}=require('electron')
-
+require('electron-reload')(__dirname)
 let win
+// const ipc=require('electron').ipcMain
+
+// ipc.on('mensajito',(event,args)=>{
+//     event.returnValue=win
+// })
 
 const crearVentana=()=>{
     //Crea la ventana del navegador
@@ -13,11 +18,18 @@ const crearVentana=()=>{
         //El browserWindow crea una ventana vacia, con el comando show esa ventana no se va a abrir. Solo se abre el win na ves se halla cargado
         show:false,
         //Elimina el menu por defecto
-        frame:false
+        frame:false,
+        icon:'./assets/favicon.ico',
+        webPreferences: {
+            nodeIntegration:true
+          }
     })
 
     //Carga el index.html de la app
     win.loadFile('./index.html')
+
+    // Open the DevTools.
+    win.webContents.openDevTools()
 
     //
     win.on('closed',()=>{
@@ -28,4 +40,7 @@ const crearVentana=()=>{
         win.show()
     })
 }
-app.on('ready',crearVentana)
+
+
+
+app.whenReady().then(crearVentana)
