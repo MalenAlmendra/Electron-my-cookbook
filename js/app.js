@@ -1,9 +1,18 @@
-const {ipcRenderer} = require('electron');
+const {remote,ipcRenderer} = require('electron')
+ 
 
-let closeBtn=document.getElementById('closeBtn')
+const btnClose=document.getElementById('closeBtn'),
+    btnMinimize=document.getElementById('minimizeBtn')
 
-closeBtn.addEventListener('click',()=>{
-    const reply=ipcRenderer.sendSync('mensajito','Hola que tal?')
-    console.log(reply)
-    reply=null
+btnClose.addEventListener('click',async ()=>{
+    // let win=remote.getCurrentWindow()
+    // win.close()
+    const renderer=await ipcRenderer.invoke('cerrar-ventana')
+    console.log(renderer)
+})
+
+btnMinimize.addEventListener('click',()=>{
+   console.log('minimized')
+   let win=remote.getCurrentWindow()
+   win.minimize()
 })

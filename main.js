@@ -1,11 +1,7 @@
-const {app, BrowserWindow}=require('electron')
+const {app, BrowserWindow, ipcMain}=require('electron')
 require('electron-reload')(__dirname)
 let win
-// const ipc=require('electron').ipcMain
 
-// ipc.on('mensajito',(event,args)=>{
-//     event.returnValue=win
-// })
 
 const crearVentana=()=>{
     //Crea la ventana del navegador
@@ -23,6 +19,11 @@ const crearVentana=()=>{
         webPreferences: {
             nodeIntegration:true
           }
+    })
+
+    //IPC Main
+    ipcMain.handle('cerrar-ventana', async ()=>{
+       return await 'click in close'
     })
 
     //Carga el index.html de la app
